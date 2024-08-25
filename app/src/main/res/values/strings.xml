@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RahpoHesab</string>
+    <string name="app_title">رهپویان انفورماتیک برتر</string>
+
+    <string name="define_category">تعریف دسته بندی</string>
+    <string name="change_category">تغییر دسته بندی</string>
+    <string name="calculate_price">محاسبه قیمت</string>
+    <string name="source_price">قیمت مرجع</string>
+    <string name="settings">تنظیمات</string>
+    
+</resources>

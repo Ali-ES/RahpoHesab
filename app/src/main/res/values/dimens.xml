@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="h_app_bars">73dp</dimen>
+    <dimen name="wh_bottom_bar_icons">50dp</dimen>
+
+    <dimen name="pad_default">16dp</dimen>
+
+    <dimen name="ts_app_title">37sp</dimen>
+</resources>
