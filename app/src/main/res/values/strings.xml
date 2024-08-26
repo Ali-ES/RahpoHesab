@@ -15,5 +15,11 @@
     <string name="currency_unit">واحد پولی</string>
     <string name="rial">ریال</string>
     <string name="tooman">تومان</string>
+    
+    <!-- Define Category Fragment --> 
+    <string name="category_name">نام دسته بندی:</string>
+    <string name="commission_percent">درصد کمیسیون:</string>
+    <string name="process_price">قیمت پردازش:</string>
+    <string name="submit">تایید</string>
 
 </resources>

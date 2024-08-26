@@ -3,14 +3,17 @@
     <dimen name="h_app_bars">73dp</dimen>
     <dimen name="wh_bottom_bar_icons">50dp</dimen>
     <dimen name="w_input_fields">215dp</dimen>
-    <dimen name="h_input_fields">40dp</dimen>
+    <dimen name="h_input_fields">50dp</dimen>
 
     <dimen name="pad_default_start_end">16dp</dimen>
     <dimen name="pad_default_top">30dp</dimen>
+    <dimen name="pad_default_edit_texts">10dp</dimen>
 
 
 
-    <dimen name="mg_default_top">30dp</dimen>
+    <dimen name="mg_default">30dp</dimen>
+    <dimen name="mg_top_button">40dp</dimen>
+    <dimen name="mg_default_edit_text_title">10dp</dimen>
 
     
     <dimen name="radius_input_fields">10dp</dimen>

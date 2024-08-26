@@ -6,17 +6,31 @@
 
     <style name="input_field_title">
         <item name="android:textSize">@dimen/ts_regular_text</item>
+        <item name="android:textStyle">bold</item>
     </style>
-    <style name="input_field">
+    <style name="input_field_style">
         <item name="android:textSize">@dimen/ts_regular_text</item>
-        <item name="android:layout_marginTop">@dimen/mg_default_top</item>
+        <item name="android:layout_marginTop">@dimen/mg_default</item>
         <item name="android:background">@drawable/bg_edit_texts</item>
+    </style>
+
+
+    <style name="edit_text_title">
+        <item name="android:textSize">@dimen/ts_regular_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">@dimen/mg_default_edit_text_title</item>
+    </style>
+    <style name="edit_text_style">
+        <item name="android:textSize">@dimen/ts_regular_text</item>
+        <item name="android:background">@drawable/bg_edit_texts</item>
+        <item name="android:paddingStart">@dimen/pad_default_edit_texts</item>
+        <item name="android:paddingEnd">@dimen/pad_default_edit_texts</item>
+        <item name="android:layout_marginTop">@dimen/mg_default_edit_text_title</item>
     </style>
 
     <style name="fragment_layout_style">
         <item name="android:layoutDirection">rtl</item>
         <item name="android:paddingStart">@dimen/pad_default_start_end</item>
         <item name="android:paddingEnd">@dimen/pad_default_start_end</item>
-        <item name="android:paddingTop">@dimen/pad_default_top</item>
     </style>
 </resources>

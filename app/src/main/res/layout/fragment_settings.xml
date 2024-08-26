@@ -34,7 +34,7 @@
             android:layout_width="@dimen/w_input_fields"
             android:layout_height="@dimen/h_input_fields"
             android:id="@+id/currency_toggle"
-            style="@style/input_field"
+            style="@style/input_field_style"
             android:textOn="@string/tooman"
             android:textOff="@string/rial"
             app:layout_constraintTop_toBottomOf="@id/settings_tv"

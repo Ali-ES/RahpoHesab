@@ -10,15 +10,18 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView settings;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        settings = findViewById(R.id.settings);
+        ImageView settings = findViewById(R.id.settings);
         setFragmentOpenOn(settings, new SettingsFragment());
+
+        ImageView defineCategory = findViewById(R.id.define_category);
+        setFragmentOpenOn(defineCategory, new DefineCategoryFragment());
+
+
 
 
         init();
@@ -27,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void init() {
-
         SharedPreferences sp = getSharedPreferences(Constants.PREF_CURRENCY, MODE_PRIVATE);
         if(sp.getString(Constants.KEY_CURRENCY, "").isEmpty()) {
             SharedPreferences.Editor editor = sp.edit();
