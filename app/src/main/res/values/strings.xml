@@ -7,5 +7,14 @@
     <string name="calculate_price">محاسبه قیمت</string>
     <string name="source_price">قیمت مرجع</string>
     <string name="settings">تنظیمات</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     
+    
+    
+    <!-- Settings Fragment --> 
+    <string name="currency_unit">واحد پولی</string>
+    <string name="rial">ریال</string>
+    <string name="tooman">تومان</string>
+
 </resources>
