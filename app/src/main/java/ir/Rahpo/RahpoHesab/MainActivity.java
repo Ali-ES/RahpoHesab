@@ -6,10 +6,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             String defaultCurrency = getString(R.string.rial);
             editor.putString(Constants.KEY_CURRENCY, defaultCurrency);
             editor.apply();
+            Log.v(TAG, "condition met");
         }
 
     }

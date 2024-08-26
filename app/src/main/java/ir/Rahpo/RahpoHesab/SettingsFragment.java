@@ -22,10 +22,16 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_settings, container, false);
 
+        currency = v.findViewById(R.id.currency_toggle);
+
         SharedPreferences sp = getActivity().getSharedPreferences(Constants.PREF_CURRENCY, Context.MODE_PRIVATE);
+        if(sp.getString(Constants.KEY_CURRENCY, "").equals(getString(R.string.tooman))) {
+            currency.setChecked(true);
+        }
+        Log.v(TAG, sp.getString(Constants.KEY_CURRENCY, ""));
         SharedPreferences.Editor editor = sp.edit();
 
-        currency = v.findViewById(R.id.currency_toggle);
+
         currency.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -39,6 +45,8 @@ public class SettingsFragment extends Fragment {
                 editor.apply();
             }
         });
+
+
 
 
         return v;
