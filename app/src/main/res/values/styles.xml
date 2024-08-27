@@ -33,6 +33,13 @@
         <item name="android:paddingEnd">@dimen/pad_end_edit_text_with_currency</item>
     </style>
 
+    <style name="buttons_style">
+        <item name="android:textSize">@dimen/ts_regular_text</item>
+        <item name="android:layout_marginTop">@dimen/mg_top_button</item>
+        <item name="android:layout_marginBottom">@dimen/mg_default</item>
+        <item name="android:background">@drawable/bg_buttons</item>
+    </style>
+
     <style name="currency_text">
         <item name="android:textSize">@dimen/ts_small_text</item>
         <item name="android:textColor">@color/gray_medium</item>
@@ -44,4 +51,5 @@
         <item name="android:paddingStart">@dimen/pad_default_start_end</item>
         <item name="android:paddingEnd">@dimen/pad_default_start_end</item>
     </style>
+
 </resources>

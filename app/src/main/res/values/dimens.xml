@@ -4,6 +4,7 @@
     <dimen name="wh_bottom_bar_icons">50dp</dimen>
     <dimen name="w_input_fields">215dp</dimen>
     <dimen name="h_input_fields">50dp</dimen>
+    <dimen name="w_buttons">150dp</dimen>
 
     <dimen name="pad_default_start_end">16dp</dimen>
     <dimen name="pad_default_top">30dp</dimen>
@@ -13,7 +14,7 @@
 
 
     <dimen name="mg_default">30dp</dimen>
-    <dimen name="mg_top_button">40dp</dimen>
+    <dimen name="mg_top_button">45dp</dimen>
     <dimen name="mg_default_edit_text_title">10dp</dimen>
     <dimen name="mg_end_currency_text">10dp</dimen>
 

@@ -1,14 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/fragment_layout_style"
     tools:context=".Fragments.ChangeCategoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/change_category_tv"
+            android:text="@string/change_category"
+            style="@style/fragment_title_style"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_category_layout"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/change_category_tv">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/select_category_tv"
+                style="@style/input_field_title"
+                android:text="@string/select_category"
+                android:labelFor="@id/select_category_et"/>
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_input_fields"
+                android:id="@+id/select_category_et"
+                style="@style/edit_text_style"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/change_category_name_layout"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/select_category_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/change_category_name_tv"
+                style="@style/input_field_title"
+                android:text="@string/change_category_name" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_input_fields"
+                android:id="@+id/change_category_name_et"
+                style="@style/edit_text_style"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/change_commission_percent_layout"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/change_category_name_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/change_commission_percent_tv"
+                style="@style/input_field_title"
+                android:text="@string/change_commission_percent" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_input_fields"
+                android:id="@+id/change_commission_percent_et"
+                style="@style/edit_text_style"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/change_process_price_layout"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/change_commission_percent_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/change_process_price_tv"
+                style="@style/input_field_title"
+                android:text="@string/change_process_price"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_input_fields"
+                android:id="@+id/change_process_price_et"
+                style="@style/edit_text_with_currency_style"
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@id/change_process_price_tv" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/process_price_currency"
+                style="@style/currency_text"
+                tools:text="@string/tooman"
+                app:layout_constraintTop_toTopOf="@id/change_process_price_et"
+                app:layout_constraintBottom_toBottomOf="@id/change_process_price_et"
+                app:layout_constraintEnd_toEndOf="@id/change_process_price_et" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="@dimen/w_buttons"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/edit_b"
+            android:text="@string/edit"
+            style="@style/buttons_style"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/change_process_price_layout"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="@dimen/w_buttons"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/delete_b"
+            android:text="@string/delete"
+            style="@style/buttons_style"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/change_process_price_layout"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
