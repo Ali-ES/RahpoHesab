@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import ir.Rahpo.RahpoHesab.Fragments.DefineCategoryFragment;
+import ir.Rahpo.RahpoHesab.Fragments.SettingsFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";

@@ -1,4 +1,4 @@
-package ir.Rahpo.RahpoHesab;
+package ir.Rahpo.RahpoHesab.Fragments;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -20,7 +20,10 @@ import android.widget.Toast;
 
 import static ir.Rahpo.RahpoHesab.ViewHelper.isNull;
 
+import ir.Rahpo.RahpoHesab.CategoryDatabase;
+import ir.Rahpo.RahpoHesab.R;
 import ir.Rahpo.RahpoHesab.Utility.CurrencyFormatter;
+import ir.Rahpo.RahpoHesab.ViewHelper;
 
 public class DefineCategoryFragment extends Fragment {
     private Context context;

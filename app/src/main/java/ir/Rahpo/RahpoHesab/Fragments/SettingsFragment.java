@@ -1,4 +1,4 @@
-package ir.Rahpo.RahpoHesab;
+package ir.Rahpo.RahpoHesab.Fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
+
+import ir.Rahpo.RahpoHesab.Constants;
+import ir.Rahpo.RahpoHesab.R;
 
 public class SettingsFragment extends Fragment {
     private static final String TAG = "Settings";

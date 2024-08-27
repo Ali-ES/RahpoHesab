@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/fragment_layout_style"
-    tools:context=".SettingsFragment" >
+    tools:context=".Fragments.SettingsFragment" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
