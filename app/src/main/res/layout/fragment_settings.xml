@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/settings_tv"
             android:text="@string/settings"
-            android:textSize="@dimen/ts_app_title"
+            style="@style/fragment_title_style"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

@@ -22,4 +22,13 @@
     <string name="process_price">قیمت پردازش:</string>
     <string name="submit">تایید</string>
 
+    <string name="success_defining_category">تعریف دسته بندی با موفقیت انجام شد</string>
+    <string name="error_defining_category">تعریف دسته بندی با خطا مواجه شد!</string>
+    <string name="error_duplicate_category_name">نام دسته بندی تکراری است!</string>
+
+    <string name="warn_empty_category_name">نام دسته بندی خالی است!</string>
+    <string name="warn_empty_commission_percent">درصد کمیسیون خالی است!</string>
+    <string name="warn_empty_process_price">قیمت پردازش خالی است!</string>
+
+
 </resources>

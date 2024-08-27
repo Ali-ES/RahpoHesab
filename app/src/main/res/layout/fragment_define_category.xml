@@ -96,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/process_price_currency"
                 style="@style/currency_text"
+                tools:text="@string/tooman"
                 app:layout_constraintTop_toTopOf="@id/process_price_et"
                 app:layout_constraintBottom_toBottomOf="@id/process_price_et"
                 app:layout_constraintEnd_toEndOf="@id/process_price_et" />

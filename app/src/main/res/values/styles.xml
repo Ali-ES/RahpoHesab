@@ -34,13 +34,9 @@
     </style>
 
     <style name="currency_text">
-        android:textSize="@dimen/ts_small_text"
-        android:textColor="@color/gray_medium"
-        android:layout_marginEnd="@dimen/mg_end_currency_text"
-        tools:text="@string/tooman"
         <item name="android:textSize">@dimen/ts_small_text</item>
         <item name="android:textColor">@color/gray_medium</item>
-        <item name="android:layout_marginTop">@dimen/mg_end_currency_text</item>
+        <item name="android:layout_marginEnd">@dimen/mg_end_currency_text</item>
     </style>
 
     <style name="fragment_layout_style">
