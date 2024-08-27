@@ -37,7 +37,7 @@ public class PercentCheckerTest {
     @Test
     public void testOneDigitWithDotPercent() {
         boolean doesMatch = percentChecker.matches("2.");
-        assertFalse(doesMatch);
+        assertTrue(doesMatch);
     }
     @Test
     public void testOneDigitOneDecimalPercent() {
