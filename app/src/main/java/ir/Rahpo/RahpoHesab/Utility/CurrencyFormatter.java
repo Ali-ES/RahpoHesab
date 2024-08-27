@@ -9,12 +9,13 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 
 public class CurrencyFormatter {
+    public static final String DEFAULT_SEPARATOR = ",";
     private DecimalFormat currencyFormatter;
     public CurrencyFormatter() {
-        currencyFormatter = new DecimalFormat("###,###");
+        currencyFormatter = new DecimalFormat("###" + DEFAULT_SEPARATOR + "###");
     }
     public String format(String price) {
-        price = price.replaceAll(",", "");
+        price = price.replaceAll(DEFAULT_SEPARATOR, "");
         String result;
         if(price.isBlank()) {
             result = "";
