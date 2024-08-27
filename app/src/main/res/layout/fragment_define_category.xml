@@ -108,10 +108,7 @@
             android:layout_height="@dimen/h_input_fields"
             android:id="@+id/submit_b"
             android:text="@string/submit"
-            android:textSize="@dimen/ts_regular_text"
-            android:layout_marginTop="@dimen/mg_top_button"
-            android:background="@drawable/bg_buttons"
-            android:layout_marginBottom="@dimen/mg_default"
+            style="@style/buttons_style"
             app:layout_constraintTop_toBottomOf="@id/process_price_layout"
             app:layout_constraintBottom_toBottomOf="parent" />
 
