@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import ir.Rahpo.RahpoHesab.Fragments.ChangeCategoryFragment;
 import ir.Rahpo.RahpoHesab.Fragments.DefineCategoryFragment;
 import ir.Rahpo.RahpoHesab.Fragments.SettingsFragment;
 
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView defineCategory = findViewById(R.id.define_category);
         setFragmentOpenOn(defineCategory, new DefineCategoryFragment());
+
+        ImageView changeCategory = findViewById(R.id.change_category);
+        setFragmentOpenOn(changeCategory, new ChangeCategoryFragment());
 
 
 
