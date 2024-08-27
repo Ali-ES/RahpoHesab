@@ -16,8 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/define_category_tv"
             android:text="@string/define_category"
-            android:textSize="@dimen/ts_app_title"
-            android:layout_marginTop="@dimen/mg_default"
+            style="@style/fragment_title_style"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -68,11 +67,10 @@
                 android:inputType="numberDecimal" />
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/process_price_layout"
-            android:orientation="vertical"
             android:layout_marginTop="@dimen/mg_default"
             app:layout_constraintTop_toBottomOf="@id/commission_percent_layout">
 
@@ -81,19 +79,33 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/process_price_tv"
                 style="@style/input_field_title"
-                android:text="@string/process_price" />
+                android:text="@string/process_price"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/h_input_fields"
                 android:id="@+id/process_price_et"
-                style="@style/edit_text_style"
-                android:inputType="number" />
-        </LinearLayout>
+                style="@style/edit_text_with_currency_style"
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@id/process_price_tv" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/process_price_currency"
+                style="@style/currency_text"
+                app:layout_constraintTop_toTopOf="@id/process_price_et"
+                app:layout_constraintBottom_toBottomOf="@id/process_price_et"
+                app:layout_constraintEnd_toEndOf="@id/process_price_et" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/submit_b"
             android:text="@string/submit"
             android:textSize="@dimen/ts_regular_text"
             android:layout_marginTop="@dimen/mg_top_button"

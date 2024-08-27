@@ -2,7 +2,9 @@
 <resources>
     <style name="fragment_title_style">
         <item name="android:textSize">@dimen/ts_app_title</item>
+        <item name="android:layout_marginTop">@dimen/mg_default</item>
     </style>
+
 
     <style name="input_field_title">
         <item name="android:textSize">@dimen/ts_regular_text</item>
@@ -26,6 +28,19 @@
         <item name="android:paddingStart">@dimen/pad_default_edit_texts</item>
         <item name="android:paddingEnd">@dimen/pad_default_edit_texts</item>
         <item name="android:layout_marginTop">@dimen/mg_default_edit_text_title</item>
+    </style>
+    <style name="edit_text_with_currency_style" parent="edit_text_style">
+        <item name="android:paddingEnd">@dimen/pad_end_edit_text_with_currency</item>
+    </style>
+
+    <style name="currency_text">
+        android:textSize="@dimen/ts_small_text"
+        android:textColor="@color/gray_medium"
+        android:layout_marginEnd="@dimen/mg_end_currency_text"
+        tools:text="@string/tooman"
+        <item name="android:textSize">@dimen/ts_small_text</item>
+        <item name="android:textColor">@color/gray_medium</item>
+        <item name="android:layout_marginTop">@dimen/mg_end_currency_text</item>
     </style>
 
     <style name="fragment_layout_style">

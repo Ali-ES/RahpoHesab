@@ -8,16 +8,19 @@
     <dimen name="pad_default_start_end">16dp</dimen>
     <dimen name="pad_default_top">30dp</dimen>
     <dimen name="pad_default_edit_texts">10dp</dimen>
+    <dimen name="pad_end_edit_text_with_currency">70dp</dimen>
 
 
 
     <dimen name="mg_default">30dp</dimen>
     <dimen name="mg_top_button">40dp</dimen>
     <dimen name="mg_default_edit_text_title">10dp</dimen>
+    <dimen name="mg_end_currency_text">10dp</dimen>
 
     
     <dimen name="radius_input_fields">10dp</dimen>
     
     <dimen name="ts_app_title">37sp</dimen>
     <dimen name="ts_regular_text">20sp</dimen>
+    <dimen name="ts_small_text">18sp</dimen>
 </resources>
