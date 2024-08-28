@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     style="@style/fragment_layout_style"
-    tools:context=".Fragments.ChangeCategoryFragment">
+    tools:context=".Fragments.SourcePriceFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -102,6 +101,7 @@
                 android:layout_height="@dimen/h_input_fields"
                 android:id="@+id/min_price_input"
                 style="@style/edit_text_with_currency_style"
+                android:gravity="center_vertical"
                 app:layout_constraintTop_toBottomOf="@id/min_price_tv" />
 
             <TextView
@@ -120,7 +120,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/max_price_layout"
             android:layout_marginTop="@dimen/mg_default"
-            app:layout_constraintTop_toBottomOf="@id/min_price_layout">
+            android:layout_marginBottom="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/min_price_layout"
+            app:layout_constraintBottom_toBottomOf="parent" >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -136,6 +138,7 @@
                 android:layout_height="@dimen/h_input_fields"
                 android:id="@+id/max_price_input"
                 style="@style/edit_text_with_currency_style"
+                android:gravity="center_vertical"
                 app:layout_constraintTop_toBottomOf="@id/max_price_tv" />
 
             <TextView

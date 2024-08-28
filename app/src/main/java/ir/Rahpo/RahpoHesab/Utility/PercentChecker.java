@@ -1,5 +1,6 @@
 package ir.Rahpo.RahpoHesab.Utility;
 
+import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,5 +16,8 @@ public class PercentChecker {
             doesMatch = matcher.matches();
         }
         return doesMatch;
+    }
+    public static String getPercentValue(String percentText) {
+        return new BigDecimal(percentText).divide(new BigDecimal("100")).toString();
     }
 }
