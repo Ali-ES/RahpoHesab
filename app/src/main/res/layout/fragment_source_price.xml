@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/fragment_layout_style"
+    tools:context=".Fragments.ChangeCategoryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/source_price_title"
+            android:text="@string/source_price"
+            style="@style/fragment_title_style"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/source_price_layout"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/source_price_title">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/source_price_tv"
+                style="@style/input_field_title"
+                android:text="@string/source_price_q"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_input_fields"
+                android:id="@+id/source_price_et"
+                style="@style/edit_text_with_currency_style"
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@id/source_price_tv" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/source_price_currency"
+                style="@style/currency_text"
+                tools:text="@string/tooman"
+                app:layout_constraintTop_toTopOf="@id/source_price_et"
+                app:layout_constraintBottom_toBottomOf="@id/source_price_et"
+                app:layout_constraintEnd_toEndOf="@id/source_price_et" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tolerance_percent_layout"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/source_price_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tolerance_percent_tv"
+                style="@style/input_field_title"
+                android:text="@string/tolerance_percent" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_input_fields"
+                android:id="@+id/tolerance_percent_et"
+                style="@style/edit_text_style"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/min_price_layout"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/tolerance_percent_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/min_price_tv"
+                style="@style/input_field_title"
+                android:text="@string/min_allowed_price"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_input_fields"
+                android:id="@+id/min_price_input"
+                style="@style/edit_text_with_currency_style"
+                app:layout_constraintTop_toBottomOf="@id/min_price_tv" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/min_price_currency"
+                style="@style/currency_text"
+                tools:text="@string/tooman"
+                app:layout_constraintTop_toTopOf="@id/min_price_input"
+                app:layout_constraintBottom_toBottomOf="@id/min_price_input"
+                app:layout_constraintEnd_toEndOf="@id/min_price_input" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/max_price_layout"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/min_price_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/max_price_tv"
+                style="@style/input_field_title"
+                android:text="@string/max_allowed_price"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h_input_fields"
+                android:id="@+id/max_price_input"
+                style="@style/edit_text_with_currency_style"
+                app:layout_constraintTop_toBottomOf="@id/max_price_tv" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/max_price_currency"
+                style="@style/currency_text"
+                tools:text="@string/tooman"
+                app:layout_constraintTop_toTopOf="@id/max_price_input"
+                app:layout_constraintBottom_toBottomOf="@id/max_price_input"
+                app:layout_constraintEnd_toEndOf="@id/max_price_input" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
