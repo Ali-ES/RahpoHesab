@@ -50,5 +50,14 @@
     <string name="tolerance_percent">درصد تلرانس:</string>
     <string name="min_allowed_price">حداقل قیمت مجاز:</string>
     <string name="max_allowed_price">حداکثر قیمت مجاز:</string>
+    
+    <!-- Calculate Price Fragment -->
+    <string name="buy_price">قیمت خرید:</string>
+    <string name="list_price">قیمت لیست:</string>
+    <string name="category">دسته بندی:</string>
+    <string name="final_buy_cost">هزینه نهایی خرید:</string>
+    <string name="final_list_cost">هزینه نهایی لیست:</string>
+    <string name="sell_price">قیمت فروش:</string>
+    <string name="net_receive">دریافتی خالص:</string>
 
 </resources>

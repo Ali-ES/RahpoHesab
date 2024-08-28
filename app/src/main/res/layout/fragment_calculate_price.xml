@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/fragment_layout_style"
+    tools:context=".Fragments.SourcePriceFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/calculate_price_title"
+            android:text="@string/calculate_price"
+            style="@style/fragment_title_style"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buy_price_title"
+            android:text="@string/buy_price"
+            style="@style/input_field_title"
+            app:layout_constraintTop_toTopOf="@id/buy_price_et"
+            app:layout_constraintBottom_toBottomOf="@id/buy_price_et"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:layout_width="@dimen/w_input_fields"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/buy_price_et"
+            style="@style/edit_text_with_currency_style"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/calculate_price_title"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buy_price_currency"
+            style="@style/currency_text"
+            tools:text="@string/tooman"
+            app:layout_constraintTop_toTopOf="@id/buy_price_et"
+            app:layout_constraintBottom_toBottomOf="@id/buy_price_et"
+            app:layout_constraintEnd_toEndOf="@id/buy_price_et" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_price_title"
+            android:text="@string/list_price"
+            style="@style/input_field_title"
+            app:layout_constraintTop_toTopOf="@id/list_price_et"
+            app:layout_constraintBottom_toBottomOf="@id/list_price_et"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:layout_width="@dimen/w_input_fields"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/list_price_et"
+            style="@style/edit_text_with_currency_style"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/buy_price_et"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_price_currency"
+            style="@style/currency_text"
+            tools:text="@string/tooman"
+            app:layout_constraintTop_toTopOf="@id/list_price_et"
+            app:layout_constraintBottom_toBottomOf="@id/list_price_et"
+            app:layout_constraintEnd_toEndOf="@id/list_price_et" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/category_title"
+            android:text="@string/category"
+            style="@style/input_field_title"
+            android:labelFor="@id/category_auto_com"
+            app:layout_constraintTop_toTopOf="@id/category_auto_com"
+            app:layout_constraintBottom_toBottomOf="@id/category_auto_com"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <AutoCompleteTextView
+            android:layout_width="@dimen/w_input_fields"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/category_auto_com"
+            style="@style/edit_text_style"
+            android:inputType="text"
+            android:completionThreshold="0"
+            app:layout_constraintTop_toBottomOf="@id/list_price_et"
+            app:layout_constraintEnd_toEndOf="parent" />
+        
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/h_divider"
+            android:id="@+id/divider_1"
+            android:background="@color/blue"
+            android:layout_marginTop="@dimen/mg_default_divider"
+            app:layout_constraintTop_toBottomOf="@id/category_auto_com"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/final_buy_cost_title"
+            android:text="@string/final_buy_cost"
+            style="@style/input_field_title"
+            android:textSize="@dimen/ts_small_text"
+            app:layout_constraintTop_toTopOf="@id/final_buy_cost_tv"
+            app:layout_constraintBottom_toBottomOf="@id/final_buy_cost_tv"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="@dimen/w_input_fields"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/final_buy_cost_tv"
+            style="@style/edit_text_with_currency_style"
+            android:layout_marginTop="@dimen/mg_default_divider"
+            app:layout_constraintTop_toBottomOf="@id/divider_1"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/final_buy_cost_currency"
+            style="@style/currency_text"
+            tools:text="@string/tooman"
+            app:layout_constraintTop_toTopOf="@id/final_buy_cost_tv"
+            app:layout_constraintBottom_toBottomOf="@id/final_buy_cost_tv"
+            app:layout_constraintEnd_toEndOf="@id/final_buy_cost_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/final_list_cost_title"
+            android:text="@string/final_list_cost"
+            style="@style/input_field_title"
+            android:textSize="@dimen/ts_small_text"
+            app:layout_constraintTop_toTopOf="@id/final_list_cost_tv"
+            app:layout_constraintBottom_toBottomOf="@id/final_list_cost_tv"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="@dimen/w_input_fields"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/final_list_cost_tv"
+            style="@style/edit_text_with_currency_style"
+            app:layout_constraintTop_toBottomOf="@id/final_buy_cost_tv"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/final_list_cost_currency"
+            style="@style/currency_text"
+            tools:text="@string/tooman"
+            app:layout_constraintTop_toTopOf="@id/final_list_cost_tv"
+            app:layout_constraintBottom_toBottomOf="@id/final_list_cost_tv"
+            app:layout_constraintEnd_toEndOf="@id/final_list_cost_tv" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/h_divider"
+            android:id="@+id/divider_2"
+            android:background="@color/blue"
+            android:layout_marginTop="@dimen/mg_default_divider"
+            app:layout_constraintTop_toBottomOf="@id/final_list_cost_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sell_price_title"
+            android:text="@string/sell_price"
+            style="@style/input_field_title"
+            app:layout_constraintTop_toTopOf="@id/sell_price_et"
+            app:layout_constraintBottom_toBottomOf="@id/sell_price_et"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:layout_width="@dimen/w_input_fields"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/sell_price_et"
+            style="@style/edit_text_with_currency_style"
+            android:inputType="number"
+            android:layout_marginTop="@dimen/mg_default_divider"
+            app:layout_constraintTop_toBottomOf="@id/divider_2"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sell_price_currency"
+            style="@style/currency_text"
+            tools:text="@string/tooman"
+            app:layout_constraintTop_toTopOf="@id/sell_price_et"
+            app:layout_constraintBottom_toBottomOf="@id/sell_price_et"
+            app:layout_constraintEnd_toEndOf="@id/sell_price_et" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/h_divider"
+            android:id="@+id/divider_3"
+            android:background="@color/blue"
+            android:layout_marginTop="@dimen/mg_default_divider"
+            app:layout_constraintTop_toBottomOf="@id/sell_price_et" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/net_receive_title"
+            android:text="@string/final_list_cost"
+            style="@style/input_field_title"
+            android:textSize="@dimen/ts_small_text"
+            app:layout_constraintTop_toTopOf="@id/net_receive_tv"
+            app:layout_constraintBottom_toBottomOf="@id/net_receive_tv"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="@dimen/w_input_fields"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/net_receive_tv"
+            style="@style/edit_text_with_currency_style"
+            android:layout_marginTop="@dimen/mg_default_divider"
+            android:layout_marginBottom="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/divider_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/net_receive_currency"
+            style="@style/currency_text"
+            tools:text="@string/tooman"
+            app:layout_constraintTop_toTopOf="@id/net_receive_tv"
+            app:layout_constraintBottom_toBottomOf="@id/net_receive_tv"
+            app:layout_constraintEnd_toEndOf="@id/net_receive_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -2,9 +2,11 @@
 <resources>
     <dimen name="h_app_bars">73dp</dimen>
     <dimen name="wh_bottom_bar_icons">50dp</dimen>
-    <dimen name="w_input_fields">215dp</dimen>
+    <dimen name="w_toggle_button">215dp</dimen>
+    <dimen name="w_input_fields">250dp</dimen>
     <dimen name="h_input_fields">50dp</dimen>
     <dimen name="w_buttons">150dp</dimen>
+    <dimen name="h_divider">2dp</dimen>
 
     <dimen name="pad_default_start_end">16dp</dimen>
     <dimen name="pad_default_top">30dp</dimen>
@@ -17,8 +19,9 @@
     <dimen name="mg_top_button">45dp</dimen>
     <dimen name="mg_default_edit_text_title">10dp</dimen>
     <dimen name="mg_end_currency_text">10dp</dimen>
+    <dimen name="mg_default_divider">20dp</dimen>
 
-    
+
     <dimen name="radius_input_fields">10dp</dimen>
     
     <dimen name="ts_app_title">37sp</dimen>

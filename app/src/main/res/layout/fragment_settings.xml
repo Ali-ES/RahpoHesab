@@ -31,7 +31,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ToggleButton
-            android:layout_width="@dimen/w_input_fields"
+            android:layout_width="@dimen/w_toggle_button"
             android:layout_height="@dimen/h_input_fields"
             android:id="@+id/currency_toggle"
             style="@style/input_field_style"
