@@ -52,7 +52,11 @@ public class ViewHelper {
                 editText.removeTextChangedListener(this);
                 String formattedPrice = currencyFormatter.format(editText.getText().toString());
                 editText.setText(formattedPrice);
-                editText.setSelection(formattedPrice.length());
+                try {
+                    editText.setSelection(formattedPrice.length());
+                } catch (NullPointerException e) {
+                    Log.v(TAG, e.toString());
+                }
                 editText.addTextChangedListener(this);
             }
         });
