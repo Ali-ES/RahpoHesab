@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import ir.Rahpo.RahpoHesab.Fragments.ChangeCategoryFragment;
 import ir.Rahpo.RahpoHesab.Fragments.DefineCategoryFragment;
 import ir.Rahpo.RahpoHesab.Fragments.SettingsFragment;
+import ir.Rahpo.RahpoHesab.Fragments.SourcePriceFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView changeCategory = findViewById(R.id.change_category);
         setFragmentOpenOn(changeCategory, new ChangeCategoryFragment());
 
-
+        ImageView sourcePrice = findViewById(R.id.source_price);
+        setFragmentOpenOn(sourcePrice, new SourcePriceFragment());
 
 
         init();
