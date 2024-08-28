@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import ir.Rahpo.RahpoHesab.Fragments.CalculatePriceFragment;
 import ir.Rahpo.RahpoHesab.Fragments.ChangeCategoryFragment;
 import ir.Rahpo.RahpoHesab.Fragments.DefineCategoryFragment;
 import ir.Rahpo.RahpoHesab.Fragments.SettingsFragment;
@@ -38,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         ImageView sourcePrice = findViewById(R.id.source_price);
         setFragmentOpenOn(sourcePrice, new SourcePriceFragment());
 
+        ImageView calculatePrice = findViewById(R.id.calculate_price);
+        setFragmentOpenOn(calculatePrice, new CalculatePriceFragment());
+
+        openFragment(new CalculatePriceFragment());
 
         init();
 
@@ -60,12 +65,15 @@ public class MainActivity extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_container, fragment);
-                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                ft.commit();
+                openFragment(fragment);
             }
         });
+    }
+    private void openFragment(Fragment fragment) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, fragment);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
     }
 
     @Override
