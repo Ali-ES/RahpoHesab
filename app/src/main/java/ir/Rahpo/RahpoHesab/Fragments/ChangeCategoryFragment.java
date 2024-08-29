@@ -25,6 +25,7 @@ import java.util.ArrayList;
 
 import ir.Rahpo.RahpoHesab.CategoryDatabase;
 import ir.Rahpo.RahpoHesab.R;
+import ir.Rahpo.RahpoHesab.Utility.CurrencyFormatter;
 import ir.Rahpo.RahpoHesab.ViewHelper;
 
 public class ChangeCategoryFragment extends Fragment {
@@ -111,6 +112,7 @@ public class ChangeCategoryFragment extends Fragment {
                 return;
             }
 
+            CurrencyFormatter formatter = new CurrencyFormatter();
             try {
                 SQLiteOpenHelper helper = new CategoryDatabase(context);
                 SQLiteDatabase db = helper.getWritableDatabase();
@@ -118,7 +120,7 @@ public class ChangeCategoryFragment extends Fragment {
                 ContentValues cv = new ContentValues();
                 if(!categoryNameText.isEmpty()) cv.put("NAME", categoryNameText);
                 if(!commissionPercentText.isEmpty()) cv.put("COMMISSION_PERCENT", commissionPercentText);
-                if(!processPriceText.isEmpty()) cv.put("PROCESS_PRICE", processPriceText);
+                if(!processPriceText.isEmpty()) cv.put("PROCESS_PRICE", formatter.parse(processPriceText));
 
                 int status = db.update("CATEGORY", cv, "NAME = ?", new String[] {selectCategoryText});
                 if(status > 0) {

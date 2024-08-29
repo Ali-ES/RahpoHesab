@@ -116,7 +116,7 @@
             android:id="@+id/final_buy_cost_title"
             android:text="@string/final_buy_cost"
             style="@style/input_field_title"
-            android:textSize="@dimen/ts_small_text"
+            android:textSize="@dimen/ts_smaller_text"
             app:layout_constraintTop_toTopOf="@id/final_buy_cost_tv"
             app:layout_constraintBottom_toBottomOf="@id/final_buy_cost_tv"
             app:layout_constraintStart_toStartOf="parent" />
@@ -127,6 +127,7 @@
             android:id="@+id/final_buy_cost_tv"
             style="@style/edit_text_with_currency_style"
             android:layout_marginTop="@dimen/mg_default_divider"
+            android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/divider_1"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -146,7 +147,7 @@
             android:id="@+id/final_list_cost_title"
             android:text="@string/final_list_cost"
             style="@style/input_field_title"
-            android:textSize="@dimen/ts_small_text"
+            android:textSize="@dimen/ts_smaller_text"
             app:layout_constraintTop_toTopOf="@id/final_list_cost_tv"
             app:layout_constraintBottom_toBottomOf="@id/final_list_cost_tv"
             app:layout_constraintStart_toStartOf="parent" />
@@ -156,6 +157,7 @@
             android:layout_height="@dimen/h_input_fields"
             android:id="@+id/final_list_cost_tv"
             style="@style/edit_text_with_currency_style"
+            android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/final_buy_cost_tv"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -221,7 +223,7 @@
             android:id="@+id/net_receive_title"
             android:text="@string/final_list_cost"
             style="@style/input_field_title"
-            android:textSize="@dimen/ts_small_text"
+            android:textSize="@dimen/ts_smaller_text"
             app:layout_constraintTop_toTopOf="@id/net_receive_tv"
             app:layout_constraintBottom_toBottomOf="@id/net_receive_tv"
             app:layout_constraintStart_toStartOf="parent" />
@@ -232,9 +234,8 @@
             android:id="@+id/net_receive_tv"
             style="@style/edit_text_with_currency_style"
             android:layout_marginTop="@dimen/mg_default_divider"
-            android:layout_marginBottom="@dimen/mg_default"
+            android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/divider_3"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
@@ -246,6 +247,15 @@
             app:layout_constraintTop_toTopOf="@id/net_receive_tv"
             app:layout_constraintBottom_toBottomOf="@id/net_receive_tv"
             app:layout_constraintEnd_toEndOf="@id/net_receive_tv" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/h_input_fields"
+            android:id="@+id/calculate_b"
+            android:text="@string/calculate"
+            style="@style/buttons_style"
+            app:layout_constraintTop_toBottomOf="@id/net_receive_tv"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

@@ -65,6 +65,8 @@ public class SourcePriceFragment extends Fragment {
                 String sourcePrice = sourcePriceEdit.getText().toString();
                 String tolerancePercent = tolerancePercentEdit.getText().toString();
                 if(sourcePrice.isEmpty() || tolerancePercent.isEmpty()) {
+                    minAllowedPriceTextView.setText("");
+                    maxAllowedPriceTextView.setText("");
                     return;
                 }
                 calcMinMaxAllowedText(sourcePrice, tolerancePercent);
