@@ -44,4 +44,27 @@ public class CalculationsTest {
         String result = calc.getMaxAllowedPrice("10250200", "0.075");
         assertEquals("10,257,887.65", result);
     }
+
+
+    @Test
+    public void testFinalBuyCostExample1() {
+        String result = calc.getFinalBuyListCost("50000", "2000", "0.08");
+        assertEquals("52,040", result);
+    }
+    @Test
+    public void testFinalBuyCostExample2() {
+        String result = calc.getFinalBuyListCost("1270235", "3405", "0.125");
+        assertEquals("1,275,227.79", result);
+    }
+    @Test
+    public void testFinalBuyCostExample3() {
+        String result = calc.getFinalBuyListCost("1533", "125", "0.05");
+        assertEquals("1,658.77", result);
+    }
+
+    @Test
+    public void testNetReceiveExample1() {
+        String result = calc.getNetReceive("780000", "0.08", "75000");
+        assertEquals("696,813.6", result);
+    }
 }
