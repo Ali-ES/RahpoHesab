@@ -17,7 +17,4 @@ public class PercentChecker {
         }
         return doesMatch;
     }
-    public static String getPercentValue(String percentText) {
-        return new BigDecimal(percentText).divide(new BigDecimal("100")).toString();
-    }
 }

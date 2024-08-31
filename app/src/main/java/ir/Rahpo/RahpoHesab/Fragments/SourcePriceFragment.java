@@ -78,7 +78,6 @@ public class SourcePriceFragment extends Fragment {
 
     private void calcMinMaxAllowedText(String sourcePrice, String tolerancePercent) {
         sourcePrice = new CurrencyFormatter().parse(sourcePrice);
-        tolerancePercent =  PercentChecker.getPercentValue(tolerancePercent);
         minAllowedPriceTextView.setText(calculations.getMinAllowedPrice(sourcePrice, tolerancePercent));
         maxAllowedPriceTextView.setText(calculations.getMaxAllowedPrice(sourcePrice, tolerancePercent));
     }
