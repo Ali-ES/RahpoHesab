@@ -1,6 +1,8 @@
 package ir.Rahpo.RahpoHesab.Fragments;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,14 +11,11 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,14 +35,13 @@ public class CalculatePriceFragment extends Fragment {
     private Context context;
     private EditText buyPriceEdit;
     private EditText listPriceEdit;
-    private AutoCompleteTextView categoryAutoCom;
+    private TextView categoryTextView;
     private TextView finalBuyCostTextView;
     private TextView finalListCostTextView;
     private EditText sellPriceEdit;
     private TextView netReceiveTextView;
+    private int selectedCategory = -1;
     private ArrayList<Category> categories = new ArrayList<>();
-    ArrayList<String> categoryNames = new ArrayList<>();
-    private boolean isCategoryValid;
     private CurrencyFormatter currencyFormatter = new CurrencyFormatter();
     private Calculations calc = new Calculations();
     @Override
@@ -53,7 +51,7 @@ public class CalculatePriceFragment extends Fragment {
         context = requireContext();
         buyPriceEdit = v.findViewById(R.id.buy_price_et);
         listPriceEdit = v.findViewById(R.id.list_price_et);
-        categoryAutoCom = v.findViewById(R.id.category_auto_com);
+        categoryTextView = v.findViewById(R.id.category_tv);
         finalBuyCostTextView = v.findViewById(R.id.final_buy_cost_tv);
         finalListCostTextView = v.findViewById(R.id.final_list_cost_tv);
         sellPriceEdit = v.findViewById(R.id.sell_price_et);
@@ -79,6 +77,13 @@ public class CalculatePriceFragment extends Fragment {
             }
         });
 
+        categoryTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         return v;
     }
 
@@ -92,6 +97,7 @@ public class CalculatePriceFragment extends Fragment {
                     SQLiteOpenHelper helper = new CategoryDatabase(context);
                     SQLiteDatabase db = helper.getReadableDatabase();
                     Cursor cursor = db.query("CATEGORY", new String[] {"NAME", "COMMISSION_PERCENT", "PROCESS_PRICE"}, null, null, null, null, null);
+                    ArrayList<String> categoryNames = new ArrayList<>();
                     if(cursor.moveToFirst()) {
                         do {
                             Category cat = new Category();
@@ -110,9 +116,28 @@ public class CalculatePriceFragment extends Fragment {
                     requireActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            categoryAutoCom.setAdapter(adapter);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                            builder.setSingleChoiceItems(adapter, 0, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    selectedCategory = which;
+                                    categoryTextView.setText(categories.get(selectedCategory).getName());
+                                }
+                            });
+                            AlertDialog dialog = builder.create();
+
+                            categoryTextView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog.show();
+                                }
+                            });
+
                         }
                     });
+
+
 
                     cursor.close();
                     db.close();
@@ -128,26 +153,24 @@ public class CalculatePriceFragment extends Fragment {
 
         String buyPrice = buyPriceEdit.getText().toString();
         String listPrice = listPriceEdit.getText().toString();
-        String category = categoryAutoCom.getText().toString().strip();
 
-        Category selectedCategory = null;
-        for(Category c : categories) {
-            if(c.getName().equals(category)) {
-                selectedCategory= c;
-            }
-        }
-        if(selectedCategory == null) {
-            Toast.makeText(context, R.string.error_category_not_found, Toast.LENGTH_SHORT).show();
+        Category category = null;
+
+
+        if(selectedCategory == -1) {
+            Toast.makeText(context, R.string.error_category_not_selected, Toast.LENGTH_SHORT).show();
             return;
+        } else {
+            category = categories.get(selectedCategory);
         }
 
         int emptyInputCount = 0;
 
         if(!buyPrice.isEmpty()) {
-            finalBuyCostTextView.setText(calc.getFinalBuyListCost(currencyFormatter.parse(buyPrice), selectedCategory.getProcessPrice(), PercentChecker.getPercentValue(selectedCategory.getCommissionPercent())));
+            finalBuyCostTextView.setText(calc.getFinalBuyListCost(currencyFormatter.parse(buyPrice), category.getProcessPrice(), category.getCommissionPercent()));
         } else emptyInputCount++;
         if(!listPrice.isEmpty()) {
-            finalListCostTextView.setText(calc.getFinalBuyListCost(currencyFormatter.parse(listPrice), selectedCategory.getProcessPrice(), PercentChecker.getPercentValue(selectedCategory.getCommissionPercent())));
+            finalListCostTextView.setText(calc.getFinalBuyListCost(currencyFormatter.parse(listPrice), category.getProcessPrice(), category.getCommissionPercent()));
         } else emptyInputCount++;
 
         String sellPrice = sellPriceEdit.getText().toString();
@@ -156,7 +179,7 @@ public class CalculatePriceFragment extends Fragment {
             return;
         }
 
-        netReceiveTextView.setText(calc.getNetReceive(currencyFormatter.parse(sellPrice), PercentChecker.getPercentValue(selectedCategory.getCommissionPercent()), selectedCategory.getProcessPrice()));
+        netReceiveTextView.setText(calc.getNetReceive(currencyFormatter.parse(sellPrice), category.getCommissionPercent(), category.getProcessPrice()));
 
 
     }

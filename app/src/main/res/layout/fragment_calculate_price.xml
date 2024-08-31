@@ -86,18 +86,18 @@
             android:id="@+id/category_title"
             android:text="@string/category"
             style="@style/input_field_title"
-            android:labelFor="@id/category_auto_com"
-            app:layout_constraintTop_toTopOf="@id/category_auto_com"
-            app:layout_constraintBottom_toBottomOf="@id/category_auto_com"
+            android:labelFor="@id/category_tv"
+            app:layout_constraintTop_toTopOf="@id/category_tv"
+            app:layout_constraintBottom_toBottomOf="@id/category_tv"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <AutoCompleteTextView
+        <TextView
             android:layout_width="@dimen/w_input_fields"
             android:layout_height="@dimen/h_input_fields"
-            android:id="@+id/category_auto_com"
+            android:id="@+id/category_tv"
             style="@style/edit_text_style"
-            android:inputType="text"
             android:completionThreshold="0"
+            android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/list_price_et"
             app:layout_constraintEnd_toEndOf="parent" />
         
@@ -108,7 +108,7 @@
             android:id="@+id/divider_1"
             android:background="@color/blue"
             android:layout_marginTop="@dimen/mg_default_divider"
-            app:layout_constraintTop_toBottomOf="@id/category_auto_com"  />
+            app:layout_constraintTop_toBottomOf="@id/category_tv"  />
 
         <TextView
             android:layout_width="wrap_content"
@@ -221,9 +221,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/net_receive_title"
-            android:text="@string/final_list_cost"
+            android:text="@string/net_receive"
             style="@style/input_field_title"
-            android:textSize="@dimen/ts_smaller_text"
             app:layout_constraintTop_toTopOf="@id/net_receive_tv"
             app:layout_constraintBottom_toBottomOf="@id/net_receive_tv"
             app:layout_constraintStart_toStartOf="parent" />

@@ -42,6 +42,7 @@
     <string name="error_deleting_category">حذف دسته بندی با خطا مواجه شد!</string>
     <string name="success_deleting_category">حذف دسته بندی موفقیت آمیز بود</string>
     <string name="error_category_not_found">دسته بندی انتخابی یافت نشد!</string>
+    <string name="error_category_not_selected">دسته بندی انتخاب نشده است!</string>
     <string name="warn_empty_category_values">مقادیر دسته بندی خالی است!</string>
     <string name="success_editing_category">دسته بندی با موفقیت ویرایش شد</string>
 
