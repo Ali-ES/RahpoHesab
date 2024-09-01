@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +14,14 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
+import ir.Rahpo.RahpoHesab.CategoryDatabase;
 import ir.Rahpo.RahpoHesab.Constants;
 import ir.Rahpo.RahpoHesab.R;
 
 public class SettingsFragment extends Fragment {
     private static final String TAG = "Settings";
     private ToggleButton currency;
+    private boolean isCurrentCurrencyTooman;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,6 +33,9 @@ public class SettingsFragment extends Fragment {
         SharedPreferences sp = getActivity().getSharedPreferences(Constants.PREF_CURRENCY, Context.MODE_PRIVATE);
         if(sp.getString(Constants.KEY_CURRENCY, "").equals(getString(R.string.tooman))) {
             currency.setChecked(true);
+            isCurrentCurrencyTooman = true;
+        } else {
+            isCurrentCurrencyTooman = false;
         }
         Log.v(TAG, sp.getString(Constants.KEY_CURRENCY, ""));
         SharedPreferences.Editor editor = sp.edit();
@@ -46,6 +52,15 @@ public class SettingsFragment extends Fragment {
                 }
                 editor.putString(Constants.KEY_CURRENCY, newCurrency);
                 editor.apply();
+
+                if(isCurrentCurrencyTooman != isChecked) {
+                    currency.setClickable(false);
+                    isCurrentCurrencyTooman = !isCurrentCurrencyTooman;
+                    CategoryDatabase dbHelper = new CategoryDatabase(getActivity());
+                    dbHelper.changeCurrency(isCurrentCurrencyTooman);
+                    dbHelper.close();
+                    currency.setClickable(true);
+                }
             }
         });
 
