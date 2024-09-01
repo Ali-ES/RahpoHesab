@@ -62,8 +62,11 @@ public class DefineCategoryFragment extends Fragment {
     private void handleSubmit() {
         String[] errorMessages = {getString(R.string.warn_empty_category_name), getString(R.string.warn_empty_commission_percent), getString(R.string.process_price)};
         if (!ViewHelper.isNull(context, errorMessages, categoryName, commissionPercent, processPrice)) {
-            if(!queryDuplicateName()) {
-                String categoryNameText = categoryName.getText().toString().strip();
+
+            String categoryNameText = categoryName.getText().toString().strip();
+
+            CategoryDatabase helper = new CategoryDatabase(context);
+            if(!helper.queryDuplicateName(categoryNameText)) {
                 String commissionPercentText = commissionPercent.getText().toString();
                 String processPriceText = new CurrencyFormatter().parse(processPrice.getText().toString());
 
@@ -73,7 +76,6 @@ public class DefineCategoryFragment extends Fragment {
                 cv.put("PROCESS_PRICE", processPriceText);
                 try {
 
-                    SQLiteOpenHelper helper = new CategoryDatabase(context);
                     SQLiteDatabase db = helper.getWritableDatabase();
                     db.insert("CATEGORY", null, cv);
                     db.close();
