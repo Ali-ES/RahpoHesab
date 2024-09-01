@@ -49,17 +49,17 @@ public class CalculationsTest {
     @Test
     public void testFinalBuyCostExample1() {
         String result = calc.getFinalBuyListCost("50000", "2000", "8");
-        assertEquals("56,000", result);
+        assertEquals("56,600", result);
     }
     @Test
     public void testFinalBuyCostExample2() {
         String result = calc.getFinalBuyListCost("1270235", "3405", "12.5");
-        assertEquals("1,432,419.38", result);
+        assertEquals("1,448,637.81", result);
     }
     @Test
     public void testFinalBuyCostExample3() {
         String result = calc.getFinalBuyListCost("1533", "125", "5");
-        assertEquals("1,734.65", result);
+        assertEquals("1,754.82", result);
     }
 
     @Test

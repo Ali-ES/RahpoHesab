@@ -32,7 +32,9 @@ public class Calculations {
 
         BigDecimal divide = divideByHundred(buyListPriceBig, commissionPercentBig);
 
-        BigDecimal result = buyListPriceBig.add(processCostBig).add(divide);
+        BigDecimal lastPart = divide.add(processCostBig).multiply(BigDecimal.TEN).divide(new BigDecimal("100"));
+
+        BigDecimal result = buyListPriceBig.add(processCostBig).add(divide).add(lastPart);
 
         return decimalFormat.format(result);
     }
