@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RahpoHesab"
         android:configChanges="orientation|screenSize"
+        android:allowClearUserData="true"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
