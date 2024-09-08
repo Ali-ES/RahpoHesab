@@ -40,6 +40,83 @@
             app:layout_constraintTop_toBottomOf="@id/settings_tv"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/h_divider"
+            android:id="@+id/divider_1"
+            android:background="@color/blue"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/currency_toggle"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/company_title"
+            android:text="@string/app_title"
+            android:textSize="@dimen/ts_app_title"
+            android:textColor="@color/blue"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintTop_toBottomOf="@id/divider_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/company_description"
+            android:text="@string/company_description"
+            android:textSize="@dimen/ts_regular_text"
+            app:layout_constraintTop_toBottomOf="@id/company_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/contact_us"
+            android:text="@string/contact_us"
+            android:autoLink="phone"
+            style="@style/buttons_style"
+            android:layout_marginTop="@dimen/mg_default"
+            android:layout_marginEnd="@dimen/mg_start_end_button"
+            app:layout_constraintTop_toBottomOf="@id/company_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/website" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/website"
+            android:text="@string/website"
+            android:autoLink="phone"
+            style="@style/buttons_style"
+            android:layout_marginTop="@dimen/mg_default"
+            android:layout_marginStart="@dimen/mg_start_end_button"
+            app:layout_constraintTop_toBottomOf="@id/company_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/contact_us"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/telegram_support"
+            android:text="@string/telegram_support"
+            android:autoLink="phone"
+            style="@style/buttons_style"
+            android:layout_marginTop="@dimen/mg_top_company_info_button"
+            app:layout_constraintTop_toBottomOf="@id/contact_us"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:id="@+id/company_logo"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/app_title"
+            android:layout_marginTop="@dimen/mg_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/telegram_support" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

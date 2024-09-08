@@ -52,4 +52,10 @@
         <item name="android:paddingEnd">@dimen/pad_default_start_end</item>
     </style>
 
+    <style name="line_text_connector">
+        <item name="android:background">@color/black</item>
+        <item name="android:layout_marginStart">@dimen/mg_text_connectors</item>
+        <item name="android:layout_marginEnd">@dimen/mg_text_connectors</item>
+    </style>
+
 </resources>

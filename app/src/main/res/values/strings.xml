@@ -15,6 +15,15 @@
     <string name="currency_unit">واحد پولی</string>
     <string name="rial">ریال</string>
     <string name="tooman">تومان</string>
+    <string name="company_description">فروش عمده لوازم جانبی کامپیوتر و موبایل</string>
+    <string name="contact_us">تماس با ما</string>
+    <string name="company_phone">tel:02188832092</string>
+    <string name="website">سایت رسمی</string>
+    <string name="company_site">http://rahpooyanbartar.com</string>
+    <string name="telegram_support">پشتیبانی تلگرام</string>
+    <string name="company_telegram">http://t.me/rahpooyanbartarsup</string>
+
+
 
     <!-- Define Category Fragment -->
     <string name="category_name">نام دسته بندی:</string>

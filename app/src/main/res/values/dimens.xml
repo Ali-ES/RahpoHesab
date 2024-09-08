@@ -7,6 +7,7 @@
     <dimen name="h_input_fields">50dp</dimen>
     <dimen name="w_buttons">150dp</dimen>
     <dimen name="h_divider">2dp</dimen>
+    <dimen name="h_text_connector">1dp</dimen>
 
     <dimen name="pad_default_start_end">16dp</dimen>
     <dimen name="pad_default_top">30dp</dimen>
@@ -20,6 +21,9 @@
     <dimen name="mg_default_edit_text_title">10dp</dimen>
     <dimen name="mg_end_currency_text">10dp</dimen>
     <dimen name="mg_default_divider">20dp</dimen>
+    <dimen name="mg_text_connectors">15dp</dimen>
+    <dimen name="mg_start_end_button">10dp</dimen>
+    <dimen name="mg_top_company_info_button">20dp</dimen>
 
 
     <dimen name="radius_input_fields">10dp</dimen>
